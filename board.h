@@ -1,5 +1,5 @@
-#ifndef UNTITLED_BOARD_H
-#define UNTITLED_BOARD_H
+#ifndef BOARD_H
+#define BOARD_H
 
 void board();
 
