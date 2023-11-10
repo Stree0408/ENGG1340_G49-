@@ -20,7 +20,7 @@ struct Board {
     void setBoardSize();
     void setBoard();
     void printBoard();
-    void getPlayerInput();
+    char getPlayerInput(bool IsFirstTimePlaying);
     void uncover(int x, int y);
     void flagging();
 };
@@ -56,10 +56,13 @@ void Board::printBoard() {
             cout << corners[l+1] << "─────";
         }
 
-        cout << corners[l+2];
-        cout << '\n';
+        cout << corners[l+2] << '\n';
 
         for (int j = 0; j < columns; ++j) {
+            if (i == yLocation && j == xLocation){
+                cout << "│  " << blueBackground << playerBoard[i][j] << reset << "  ";
+                continue;
+            }
             cout << "│  " << playerBoard[i][j] << "  ";
         }
         cout << "│" << '\n';
@@ -74,55 +77,72 @@ void Board::printBoard() {
 }
 
 
-void Board::getPlayerInput() {
+char Board::getPlayerInput(bool IsFirstTimePlaying) {
     char playerInput;
     printBoard();
     cout << "input the direction you want to head. "
             "if you put in multiple characters, "
-            "only the first one will be considered.";
+            "only the first one will be considered.\n";
 
     bool validInput = false;
     do {
         cin >> playerInput;
 
         switch (playerInput) {
-        case 'w':
-            if (yLocation + 1 >= rows) {
+        case 's':
+        case 'S':
+            if (yLocation + 1 < rows) {
                 ++yLocation;
                 validInput = true;
             }
             break;
 
         case 'a':
-            if (xLocation - 1 < 0) {
+        case 'A':
+            if (xLocation - 1 >= 0) {
                 --xLocation;
                 validInput = true;
             }
             break;
 
-        case 's':
-            if (yLocation - 1 < 0) {
+        case 'w':
+        case 'W':
+            if (yLocation - 1 >= 0) {
                 --yLocation;
                 validInput = true;
             }
             break;
 
         case 'd':
-            if (xLocation + 1 >= columns) {
+        case 'D':
+            if (xLocation + 1 < columns) {
                 ++xLocation;
                 validInput = true;
             }
             break;
 
         case 'o':
+        case 'O':
+            if (IsFirstTimePlaying == true) {
+                return 'o';
+            }
             uncover(xLocation, yLocation);
             validInput = true;
             break;
 
         case 'p':
+        case 'P':
+            if (IsFirstTimePlaying == true) {
+                break;
+            }
             flagging();
             validInput = true;
             break;
+
+        case 'm':
+        case 'M':
+            validInput = true;
+            return 'm';
 
         default:
             break;
@@ -130,10 +150,12 @@ void Board::getPlayerInput() {
         
         if (!validInput) {
             printBoard();
-            cout << "invalid input";
+            cout << "invalid input. please enter again.\n";
         }
 
     } while (!validInput);
+
+    return '.';
 
 }
 
