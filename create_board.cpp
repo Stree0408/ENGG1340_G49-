@@ -1,137 +1,192 @@
-
-//보드 2개 만들기 (24x20, 폭탄 99개) (박찬혁)
-//Make an array of arr[24][20] = {0};  → map
-//Randomly distribute 폭탄 on the map → 폭탄있는곳에는 o, 없는곳에는 x
-//동일한 맵에, x인곳들에 (폭탄없는곳)
-//주변 폭탄 갯수 (특정 구역만 랜덤하게 - 어느정도 붙어있게 random돌려서)
-
-
-
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-
+#include <string>
+#include "board.h"
 using namespace std;
 
-// if it has bomb : 'B', if it is empty : '.'
-void make_board(char board[16][30])
+
+char **board;
+char **tmp_board;
+int row;
+int col;
+
+
+
+void customize()
 {
-    // fill the board with '.'
-    for (int i=0; i<16; i++)
+    cout << "CUSTOMIZE YOUR OWN BOARD, OWN GAME!!" << endl;
+    cout << "ENTER NUMBER BETWEEN 8-16 FOR ROWS : ";
+    cin >> row;
+    cout << "ENTER NUMBER BETWEEN 8-30 FOR COLUMNS : ";
+    cin >> col;
+    
+    while ( row<8 || row>16)
     {
-        for (int j=0; j<30; j++)
-        {
-            board[i][j] = '.';
-        }
+        cout << "Please enter the row again : ";
+        cin >> row;
     }
     
-    // generate bomb randomly
-    srand(time(0));
-    int rnd;
-    for (int i=0; i<16; i++)
+    while ( col<8 || col >30 )
     {
-        for (int j=0; j<6; j++)
-        {
-            rnd = rand() % 30;
-            if ((board[i][rnd]) == '.')
-            {
-                board[i][rnd] = 'V';
-            }
-            else
-            {
-                j--; continue;
-            }
-        }
+        cout << "Please enter the col again : ";
+        cin >> col;
+    }
+}
+
+
+// generate board with size of row*col, fill in with '-' first
+void make_board()
+{
+    // make the main board
+    board = new char*[row];
+    for(int i=0; i<row; i++) {
+        board[i] = new char[col];
     }
     
-    // count how many bombs around each space
-    int cnt;
-    for (int i=0; i<16; i++)
+    // make tmp_board
+    tmp_board = new char*[row];
+    for(int i=0; i<row; i++) {
+        tmp_board[i] = new char[col];
+    }
+    
+    for(int i = 0; i < row; ++i) 
     {
-        for (int j=0; j<30; j++)
+        for(int j = 0; j < col; ++j)
+            board[i][j] =  tmp_board[i][j] = '.';
+    }
+}
+
+
+// printout the main board
+void print_board() {
+    for(int i = 0; i < row; ++i) {
+        for(int j = 0; j < col; ++j) {
+            cout << board[i][j] << ' ';
+        }
+        cout << '\n';
+    }
+}
+
+
+
+// printout the tmp board
+void print_tmp_board() {
+    for(int i = 0; i < row; ++i) {
+        for(int j = 0; j < col; ++j) {
+            cout << tmp_board[i][j] << ' ';
+        }
+        cout << '\n';
+    }
+}
+
+
+
+int cnt_mines(int x, int y)     // x == row, y == column
+{
+    int cnt=0;
+    int low_x = x-1, high_x= x+1;   // row
+    int low_y = y-1, high_y= y+1;   // column
+    
+    if (x==0)
+        low_x = x;
+    if (x==row-1)
+        high_x = x;
+    if (y==0)
+        low_y = y;
+    if (y==col-1)
+        high_y = y;
+    
+    for (int i=low_x; i<=high_x; i++)
+    {
+        for (int j=low_y; j<=high_y; j++)
         {
-            if (board[i][j] != 'V')
-            {
-                int low_i = i-1, high_i= i+1;   // row
-                int low_j = j-1, high_j= j+1;   // column
-                cnt=0;
-                
-                if (i==0)
-                    low_i = i;
-                if (i==29)
-                    high_i = i;
-                if (j==0)
-                    low_j = j;
-                if (j==29)
-                    high_j = j;
-                
-                
-                for (int k=low_i; k<=high_i; k++)
-                {
-                    for (int m=low_j; m<=high_j; m++)
-                    {
-                        if (board[k][m] == 'V')
-                            cnt++;
-                    }
-                }
-                board[i][j] = cnt+ 48;
-            }
-            else
-                continue;
+            if (board[i][j] == 'B')
+                cnt++;
         }
     }
+    return cnt;
+}
+         
+
+
+void place_mines(int x, int y)
+{
 
     
+    board[x][y]='H';
+    
+    int nMines = (row*col) * 0.2;
+//    cout << nMines << endl;
+    
+    int rnd_r, rnd_c;   // random input for row and column
+    
+    srand(time(NULL));
+    for (int i=0; i<nMines; i++)
+    {
+        rnd_r = rand() % row;
+        rnd_c = rand() % col;
+        
+        while (rnd_r>=x-1 && rnd_r<=x+1)
+            rnd_r = rand() % row;
+        
+        while (rnd_c>=y-1 && rnd_c<=y+1)
+            rnd_c = rand() % col;
+        
+        if (board[rnd_r][rnd_c] == 'B')
+        {
+            i--; continue;
+        }
+        else
+            board[rnd_r][rnd_c] = 'B';
+    }
     
     
-    // 포인터 아직 안배워서  배열가지고 배꼈음
-    char new_board[16][30]={0};
-
-//    for (int i=0; i<16; i++)
+//    for (int i=0; i<row; i++)
 //    {
-//        for (int j=0; j<30; j++)
+//        for (int j=0; j<col; j++)
 //        {
-//            new_board[i][j] = board[i][j];
+//            if (board[i][j] != 'B' && board[i][j] != 'H')
+//                board[i][j] = 48+cnt_mines(i, j);
 //        }
 //    }
-    
-    for (int i=0; i<16; i++)
-    {
-        for (int j=0; j<30; j++)
-        {
-            cout << new_board[i][j] << " ";
-        }
-        cout << endl;
-    }
-    cout << "\n\n\n\n";
 }
 
 
-//void change_board(char board[16][30])   // 2nd board
-//{
-//    char arr[16][30];
-//
-//}
-
-
-
-
-void print_board(char board[16][30])
+void reveal_cells(int x, int y)
 {
-    for (int i=0; i<16; i++)
-    {
-        for (int j=0; j<30; j++)
-        {
-            cout << board[i][j] << " ";
-        }
-        cout << endl;
-    }
+    
 }
 
+         
+
+void del_dynamic()
+{
+    for(int i=0; i<row; i++)
+        delete[] board[i];
+    delete[] board;
+    
+    board = nullptr;
+}
+         
+         
 
 int main()
 {
-    char board[16][30]={0};     // initialize all elements to null character
-    make_board(board);
-    print_board(board);
+    customize();
+    make_board();
+    print_board();
+    
+    int x,y;    // x = row, y = col
+    cin >> x >> y;      // 플레이어가 처음 클릭하는 좌표 (여기기준 3x3은 폭탄없어야함)
+    
+    
+    place_mines(x,y);
+    print_board();
+    print_tmp_board();
+    
+//    reveal_cells(<#int x#>, <#int y#>)(x,y);
+    
+    del_dynamic();      // 맨 마지막에, 동적메모리 풀어줘야함
+    return 0;
 }
