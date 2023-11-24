@@ -43,7 +43,7 @@ void loadScoreboard(vector<Score>& scoreboard) {
     }
 }
 
-int main() {
+int scoring() {
     vector<Score> scoreboard;
     loadScoreboard(scoreboard);
 
