@@ -25,7 +25,7 @@ void updateScoreboard(const string& playerName, int points, vector<Score>& score
     Score score;
     score.playerName = playerName;
     score.score = points;
-    
+
     scoreboard.push_back(score);
     saveScoreboard(scoreboard);
 }
@@ -39,7 +39,7 @@ void loadScoreboard(vector<Score>& scoreboard) {
         }
         file.close();
     } else {
-        cout << "Unable to open the scoreboard file." << endl;
+        cout << "No scoreboard file found. Starting a new game." << endl;
     }
 }
 
@@ -49,13 +49,13 @@ int scoring() {
 
     string playerName;
     int points;
-    
+
     cout << "Enter player name: ";
     cin >> playerName;
-    
+
     cout << "Enter points: ";
     cin >> points;
-    
+
     updateScoreboard(playerName, points, scoreboard);
 
     // Ask the user whether to continue from the previous game or start new
@@ -65,14 +65,19 @@ int scoring() {
 
     if (choice == 'y' || choice == 'Y') {
         // Continue from the previous game
-        for (const Score& score : scoreboard) {
-            cout << "Player: " << score.playerName << ", Score: " << score.score << endl;
+        if (scoreboard.empty()) {
+            cout << "No scores found. Starting a new game." << endl;
+        } else {
+            for (const Score& score : scoreboard) {
+                cout << "Player: " << score.playerName << ", Score: " << score.score << endl;
+            }
         }
     } else {
         // Start a new game
         scoreboard.clear();
         saveScoreboard(scoreboard);
     }
-    
+
     return 0;
 }
+
