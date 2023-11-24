@@ -5,7 +5,7 @@ using namespace std;
 struct Board {
     int columns;
     int rows;
-    int numberOfMines;
+    int numberOfFlags;
     int xLocation;
     int yLocation;
     char mineBoard[16][30];
