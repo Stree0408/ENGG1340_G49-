@@ -9,7 +9,7 @@ using namespace std;
 struct Board {
     int columns;
     int rows;
-    int numberOfMines;
+    int numberOfFlags;
     int xLocation; // x coordinate of the player's cursor
     int yLocation; // y coordinate of the player's cursor
     char mineBoard[16][30]; // board with only 'B'
@@ -227,12 +227,12 @@ void Board::uncover(int x, int y) {
 void Board::flagging() {
     if (playerBoard[yLocation][xLocation] == 'F') {
         playerBoard[yLocation][xLocation] = ' ';
-        numberOfMines += 1;
+        numberOfFlags += 1;
         return;
     }
 
     playerBoard[yLocation][xLocation] = 'F';
-    numberOfMines -= 1;
+    numberOfFlags -= 1;
 
     if (mineBoard[yLocation][xLocation] == 'B') {
         currentScore += 10;
