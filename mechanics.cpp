@@ -326,7 +326,7 @@ void Board::endGame(int currentScore){
 }
 
 
-void Board::leaderboard(int currentScore) {
+void leaderboard() {
     vector<Score> scoreboard;
     loadScoreboard(scoreboard);
 
