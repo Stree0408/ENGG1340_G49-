@@ -50,6 +50,7 @@ int main() {
     // need function for leaderboard
     else if (firstinput ==2) {
         leaderboard();
+        runGame();
     }
     return 0;
 }
