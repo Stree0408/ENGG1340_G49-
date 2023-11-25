@@ -55,6 +55,7 @@ void Board::placeMines()
     mineBoard[yLocation][xLocation]='H';
     
     numberOfMines = (row*column) * 0.2;
+    numberOfFlags = numberOfMines;
     
     int rnd_r, rnd_c;   // random input for row and column
     
