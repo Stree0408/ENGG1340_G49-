@@ -4,5 +4,6 @@
  void displayBanner();
  void mainMenu();
  void displayControls();
+ void displayFlags(int numberOfFlags);
 
 #endif
