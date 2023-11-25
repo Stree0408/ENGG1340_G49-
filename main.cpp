@@ -25,7 +25,8 @@ void runGame() {
     // running the rest of the game.
     do {
         input = b.getPlayerInput(false);
-    } while (input != 'm');
+        determine = b.checkEndGame();
+    } while (input != 'm' && determine==false);
 
     // needs a function to end the game and save the scores and stuff.
     cout << "game over";
