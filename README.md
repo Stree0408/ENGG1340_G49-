@@ -62,7 +62,7 @@ https://
 ### Main.cpp
 > Running the game and supporting file input and output
 
-|Name|Type|Type|
+|Name|Type|Purpose|
 |:-:|:-:|:-:|
 |gameMap|Map|Represents the game map|
 |player1|Player|Represents the first player|
@@ -77,25 +77,25 @@ https://
 ### mechanics.cpp
 > various functions that we used to run the game
 
-|Name|Type|Purpose|Parameter|
+|Name|Type|Purpose|
 |:-:|:-:|:-:|:-:|
-|save_game|void|Saves the game state to a file|string &filename, Map &gameMap, Player &player1, Player &player2, int counter|
-|load_game|bool|Loads the game state from a file| string &filename, Map &gameMap, Player &player1, Player &player2, int &counter|
-|askWhichTicket|int|Asks the user which ticket they want to use| vector<int> &tickets|
-|askMalMovement|vector<string>|Asks the user which mal they want to move| int turn, Player one, Player two|
-|getTicket|int|Generates and returns a random ticket| N/A|
-|getTicketName|string|Returns the name of a ticket based on the ticket number|int ticketNum|
-|move_or_carry_Mal|void|Moves or carries a mal based on the malSign string| Player &player, int playerNum, int malSelect, string malSign, int TicketResult, Map &gameMap, int pRow, int pCol, int row, int col|
-|killMal|void|Kills an opponent's mal based on its location| Map &gameMap, Player &opponent, int killerPlayerNum, int row, int col|
-|moveMalDisplay|void|Updates the game map after moving a mal| Map &gameMap, string malSign, int previRow, int previCol, int row, int col|
-|addMalDisplay|void|Adds Mal display when loading the saved game| Map &gameMap, Player player1, Player player2|
-|PrintExplain|void|Prints out the explanation of the location| int row, int col|
+|save_game|void|Saves the game state to a file|
+|load_game|bool|Loads the game state from a file|
+|askWhichTicket|int|Asks the user which ticket they want to use|
+|askMalMovement|vector<string>|Asks the user which mal they want to move|
+|getTicket|int|Generates and returns a random ticket|
+|getTicketName|string|Returns the name of a ticket based on the ticket number|
+|move_or_carry_Mal|void|Moves or carries a mal based on the malSign string|
+|killMal|void|Kills an opponent's mal based on its location|
+|moveMalDisplay|void|Updates the game map after moving a mal|
+|addMalDisplay|void|Adds Mal display when loading the saved game|
+|PrintExplain|void|Prints out the explanation of the location|
 
 
 ### display.cpp
 > various functions that we used to display the game
 
-|Name|Type|Type|
+|Name|Type|Purpose|
 |:-:|:-:|:-:|
 |displayBanner|void|displays the banner minesweeper|
 |mainMenu|void|displays the main menu of the game|
@@ -106,7 +106,7 @@ https://
 ### score.cpp
 > This code defines a `Map` class that manages a board game map, handling player locations, mapping between different coordinate systems, and updating the game board's visual representation.
 
-|Name|Type|Type|
+|Name|Type|Purpose|
 |:-:|:-:|:-:|
 |TicketResult|int|Stores the result of the ticket roll|
 |input|string|Stores user input|
