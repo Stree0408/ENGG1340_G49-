@@ -22,6 +22,8 @@ struct Board {
     void flagging();
     void endGame(int currentScore);
     void leaderboard(int currentScore);
+    bool checkEndGame(); 
+
 
 };
 
