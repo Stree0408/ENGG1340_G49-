@@ -62,6 +62,7 @@ void Board::placeMines()
     mineBoard[yLocation][xLocation]='H';
     
     numberOfMines = (row*column) * 0.2;
+    numberOfFlags = numberOfMines;
     
     int rnd_r, rnd_c;   // random input for row and column
     
@@ -134,6 +135,7 @@ void Board::printBoard() {
     cout << corners[8];
     cout << "\n";
     displayControls();
+    displayFlags(numberOfFlags);
 }
 
 
@@ -287,24 +289,10 @@ void Board::flagging() {
     if (playerBoard[yLocation][xLocation] == 'F') {
         playerBoard[yLocation][xLocation] = ' ';
         numberOfFlags += 1;
-        if (mineBoard[yLocation][xLocation] == 'B') {
-        numFlagMines -= 1;
-        return;
-        } 
         return;
     }
 
     playerBoard[yLocation][xLocation] = 'F';
-    numberOfFlags += 1;
-
-    if (mineBoard[yLocation][xLocation] == 'B') {
-        numFlagMines += 1;
-        return;
-        } 
+    numberOfFlags -= 1;
         
-    if (mineBoard[yLocation][xLocation] == 'B') {
-        currentScore += 10;
-    } else {
-        currentScore -= 100;
-    }
 }
