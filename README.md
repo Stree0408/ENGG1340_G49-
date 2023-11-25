@@ -64,7 +64,7 @@ https://
 
 |Name|Type|Purpose|
 |:-:|:-:|:-:|
-|gameMap|Map|Represents the game map|
+|runGame|void|runs the game minesweeper|
 |player1|Player|Represents the first player|
 |player2|Player|Represents the second player|
 |counter|int|Counts the number of turns|
