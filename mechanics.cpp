@@ -294,3 +294,26 @@ void Board::flagging() {
         currentScore -= 100;
     }
 }
+
+
+void Board::endGame(int currentScore){
+    string playerName;
+    cout << "Enter your name: ";
+    cin >> playerName;
+
+    // Update the scoreboard with the current score
+    updateScoreboard(playerName, currentScore);
+
+    // Display the scoreboard
+    vector<Score> scoreboard;
+    loadScoreboard(scoreboard);
+}
+
+
+void Board::leaderboard(int currentScore) {
+    // Sort the scoreboard
+    sortScores(scoreboard);
+    // Print the sorted scoreboard
+    cout << "Scoreboard:" << endl;
+    printScoreboard(scoreboard);
+}
