@@ -33,7 +33,7 @@ https://
 2. The number on each cell represents the number of mines around the cell
 3. uncover the cell if you think it does not have a mine
 4. flag the cell if you think it has a mine
-5. If you uncover a mine, you will
+5. If you uncover a mine, you will lose 200 points
 6. To end the game, uncover or flag all the cells
 
 <br/>
