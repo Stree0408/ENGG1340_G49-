@@ -78,7 +78,7 @@ https://
 > various functions that we used to run the game
 
 |Name|Type|Purpose|
-|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|
 |save_game|void|Saves the game state to a file|
 |load_game|bool|Loads the game state from a file|
 |askWhichTicket|int|Asks the user which ticket they want to use|
