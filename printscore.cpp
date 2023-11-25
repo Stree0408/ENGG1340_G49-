@@ -23,7 +23,7 @@ void sortScores(vector<Score>& scoreboard) {
     sort(scoreboard.begin(), scoreboard.end(), compareScores);
 }
 
-int main() {
+int printingscore() {
     vector<Score> scoreboard;
     loadScoreboard(scoreboard);
 
