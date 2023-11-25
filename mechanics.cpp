@@ -339,6 +339,6 @@ void leaderboard() {
     sortScores(scoreboard);
 
     // Print the sorted scoreboard
-    cout << "Scoreboard:" << endl;
+   
     printScoreboard(scoreboard);
 }
