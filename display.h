@@ -4,6 +4,6 @@
  void displayBanner();
  void mainMenu();
  void displayControls();
- void displayFlags(int currentScore, int numberOfFlags)
+ void displayFlags(int currentScore, int numberOfFlags);
 
 #endif
