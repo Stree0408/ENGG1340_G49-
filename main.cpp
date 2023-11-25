@@ -9,6 +9,7 @@ void runGame() {
     b.setBoard();
     b.xLocation = 3;
     b.yLocation = 3;
+    b.currentScore = 5000;
 
     // first input
     do {
