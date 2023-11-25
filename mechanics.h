@@ -8,7 +8,6 @@ struct Board {
     int row;
     int numberOfFlags;
     int numberOfMines;
-    int numFlagMines;
     int xLocation;
     int yLocation;
     char **mineBoard;
