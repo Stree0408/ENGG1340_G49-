@@ -23,6 +23,7 @@ struct Board {
     void uncover(int x, int y);
     void flagging();
     void endGame();
+    void leaderboard();
    
     bool checkEndGame(); 
 
