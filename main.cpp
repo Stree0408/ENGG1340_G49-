@@ -29,6 +29,7 @@ void runGame() {
 
     // needs a function to end the game and save the scores and stuff.
     cout << "game over";
+    b.endGame();
     b.delDynamic();
 }
 
