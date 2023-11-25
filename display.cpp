@@ -39,5 +39,5 @@ void displayControls() {
 }
 
 void displayFlags(int numberOfFlags) {
-    cout << "Flags: " << numberOfFlags;
+    cout << "Flags: " << numberOfFlags << "\n\n";
 }
