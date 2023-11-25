@@ -72,17 +72,27 @@ https://
 
 |Name|Type|Purpose|
 |:-:|:-:|:-:|
-|save_game|void|Saves the game state to a file|
-|load_game|bool|Loads the game state from a file|
-|askWhichTicket|int|Asks the user which ticket they want to use|
-|askMalMovement|vector<string>|Asks the user which mal they want to move|
-|getTicket|int|Generates and returns a random ticket|
-|getTicketName|string|Returns the name of a ticket based on the ticket number|
-|move_or_carry_Mal|void|Moves or carries a mal based on the malSign string|
-|killMal|void|Kills an opponent's mal based on its location|
-|moveMalDisplay|void|Updates the game map after moving a mal|
-|addMalDisplay|void|Adds Mal display when loading the saved game|
-|PrintExplain|void|Prints out the explanation of the location|
+|column|int|asks the user for the number of columns|
+|row|int|asks the user for the number of columns|
+|numberOfFlags|int|counts the number of flags left|
+|numberOfMines|int|counts the number of Mines on the board|
+|currentScore|int|counts the current score of the player|
+|xLocation|int|expresses the xLocation of the player|
+|yLocation|int|expresses the yLocation of the player|
+|**mineBoard|char|a board filled with randomly scattered mines|
+|**playerBoard|char|a board which reflects the player's input|
+|setBoardSize|void|takes player input for row and column|
+|setBoard|void|generates a board with from the player input|
+|placeMines|void|randomly places the mines on the board|
+|delDynamic|void||
+|printBoard|void|prints the board so it is visible to players|
+|getPlayerInput|char|gets the player input and processes the command|
+|uncover|void|uncovers the mine, or generates surrounding numbers|
+|flagging|void|flags the location|
+|endGame|void||
+|checkEndGame|bool||
+
+
 
 
 ### display.cpp
