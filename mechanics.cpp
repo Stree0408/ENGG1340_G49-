@@ -13,7 +13,7 @@ bool Board::checkEndGame()
     {
         for (int j=0; j<column; j++)
         {
-            if (playerBoard[row][column] == ' ')
+            if (playerBoard[i][j] == ' ')
             {
                 return false;
             }
