@@ -2,6 +2,7 @@
 #include "mechanics.h"
 #include <iostream>
 #include <string>
+#include "score.h"
 #define reset "\033[1;0m"
 #define blueBackground "\033[44m"
 using namespace std;
