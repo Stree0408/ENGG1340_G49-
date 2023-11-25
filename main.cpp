@@ -10,11 +10,12 @@ void runGame() {
     b.xLocation = 3;
     b.yLocation = 3;
     b.currentScore = 5000;
+    char input;
 
     // first input
     do {
-        b.getPlayerInput(true);
-    } while (b.getPlayerInput(true) != 'o');
+        input = b.getPlayerInput(true);
+    } while (input != 'o');
 
     // set the board using the first input, and reveal.
     b.placeMines();
@@ -22,8 +23,8 @@ void runGame() {
 
     // running the rest of the game.
     do {
-        b.getPlayerInput(false);
-    } while (b.getPlayerInput(false) != 'm');
+        input = b.getPlayerInput(false);
+    } while (input != 'm');
 
     // needs a function to end the game and save the scores and stuff.
     cout << "game over";
