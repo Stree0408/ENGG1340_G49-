@@ -12,6 +12,7 @@ void runGame() {
     b.currentScore = 5000;
     b.numberOfFlags = 0;
     char input;
+    bool determine; 
 
     // first input
     do {
