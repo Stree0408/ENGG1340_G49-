@@ -7,6 +7,21 @@
 #define blueBackground "\033[44m"
 using namespace std;
 
+bool Board::checkEndGame()
+{
+    for (int i=0; i<row; i++)
+    {
+        for (int j=0; j<column; j++)
+        {
+            if (playerBoard[row][column] == ' ')
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 
 void Board::setBoardSize() {
     cout << "CUSTOMIZE YOUR OWN BOARD, OWN GAME!!" << endl;
