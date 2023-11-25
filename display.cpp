@@ -24,7 +24,7 @@ void mainMenu() {
 }
 
 void displayControls() {
-    court << "\n"
+    cout << "\n"
             "┌───────────────────────────────────────────────────────────────────────────┐\n"
             "│ press W or A or S or D and press Enter for each move                      │\n"
             "│ if you put in multiple characters, only the first one will be considered  │\n"
