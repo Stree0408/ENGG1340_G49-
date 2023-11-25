@@ -43,7 +43,7 @@ https://
 
 2.	mechanics.h: The `board.h` file contains the main logic of the game.
 
-4.	display.h: The `display.h` file contains the 
+4.	display.h: The `display.h` file contains the display of the game.
 
 5.	score.h: The `score.h` file 
 <br/>
@@ -74,7 +74,7 @@ https://
 |tickets|vector<int>|Stores the remaining tickets|
 |malVector|vector<string>|Stores the list of Mal names to be displayed|
 
-### Functions.cpp
+### mechanics.cpp
 > various functions that we used to run the game
 
 |Name|Type|Purpose|Parameter|
@@ -92,7 +92,18 @@ https://
 |PrintExplain|void|Prints out the explanation of the location| int row, int col|
 
 
-### Map.cpp
+### display.cpp
+> various functions that we used to display the game
+
+|Name|Type|Type|
+|:-:|:-:|:-:|
+|displayBanner|void|displays the banner minesweeper|
+|mainMenu|void|displays the main menu of the game|
+|displayControls|void|displays the directions to play the game|
+|displayFlags|void|displays the current score and number of flags left|
+
+
+### score.cpp
 > This code defines a `Map` class that manages a board game map, handling player locations, mapping between different coordinate systems, and updating the game board's visual representation.
 
 |Name|Type|Type|
@@ -102,6 +113,7 @@ https://
 |malSelect|int|Stores the selected Mal index|
 |tickets|vector<int>|Stores the remaining tickets|
 |malVector|vector<string>|Stores the list of Mal names to be displayed|
+
 
 ### The Coding Requirements
 >Coding requirement demonstration
