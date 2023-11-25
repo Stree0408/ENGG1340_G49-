@@ -10,6 +10,7 @@ void runGame() {
     b.xLocation = 3;
     b.yLocation = 3;
     b.currentScore = 5000;
+    b.numberOfFlags = 0;
     char input;
 
     // first input
