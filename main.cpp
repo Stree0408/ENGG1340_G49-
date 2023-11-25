@@ -34,6 +34,7 @@ void runGame() {
 
 
 int main() {
+    displayBanner();
     mainMenu();
     int firstinput;
     cin >> firstinput;
