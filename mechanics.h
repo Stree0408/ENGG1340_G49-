@@ -1,7 +1,5 @@
 #ifndef MECHANICS_H
 #define MECHANICS_H
-using namespace std;
-
 
 struct Board {
     int column;
