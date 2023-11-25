@@ -6,35 +6,44 @@ https://
   
 ## Team Members:
   * Park Chanhyuk (3036086804)
-  * Son ()
-  * Kim ()
-  * Jung ()
+  * Son Ye Ryung (3036050312)
+  * Kim Minju (3035978531)
+  * Jung Se Yeon (3036050518)
 
 ### How to Play
 1.	Compile the program and run the executable.
 2.	Set the board size 
 3.	Click the cell to reveal 
-4.	If 
+4.	If
+
+### The introduction and rule of the game
+1. play new game
+2. see the Leaderboard
+
+### Rule of the game
+1. Complie and run the program
+2. choose from 1 and 2
+3. Customize your board size
+4. Play the game
 
 <br/>
 
-### The introduction and rule of the game
-
-
- 
-## Moves:
-
+### The introduction and rules of the game
+1. Choose a cell and press 'o' to start the game
+2. The number on each cell represents the number of mines around the cell
+3. uncover the cell if you think it does not have a mine
+4. flag the cell if you think it has a mine
+5. If you uncover a mine, you will
+6. To end the game, uncover or flag all the cells
 
 <br/>
 
 ### **Game Components**
 1.	main.cpp: The `main.cpp` file contains the main game loop and logic.
 
-2.	board.h: The `board.h` file contains 
+2.	mechanics.h: The `board.h` file contains the main logic of the game.
 
-3.	colors.h: The `colors.h` file
-
-4.	display.h: The `display.h` file 
+4.	display.h: The `display.h` file contains the 
 
 5.	score.h: The `score.h` file 
 <br/>
@@ -42,10 +51,9 @@ https://
 ### **Dependencies**
 * C++ Standard Library
 * `<iostream>`
-* `<cstdlib>`
-* `<ctime>`
 * `<string>`
 * `<vector>`
+* `<fstream>`
 <br/>
 
 ***
