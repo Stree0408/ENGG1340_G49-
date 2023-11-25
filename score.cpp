@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <vector>
 #include <algorithm>
 #include "score.h"
 
