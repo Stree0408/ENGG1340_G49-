@@ -22,7 +22,7 @@ struct Board {
     char getPlayerInput(bool IsFirstTimePlaying);
     void uncover(int x, int y);
     void flagging();
-    void endGame(int currentScore);
+    void endGame();
    
     bool checkEndGame(); 
 
