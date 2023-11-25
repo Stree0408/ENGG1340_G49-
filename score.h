@@ -2,7 +2,7 @@
 #define score_H
 #include <vector>
 #include <string>
-#include <vector>
+
 
 struct Score {
     std::string playerName;
