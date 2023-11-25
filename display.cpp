@@ -38,6 +38,7 @@ void displayControls() {
             "\n";
 }
 
-void displayFlags(int numberOfFlags) {
+void displayFlags(int currentScore, int numberOfFlags){
+    cout << "Score: " << currentScore << "\n";
     cout << "Flags: " << numberOfFlags << "\n\n";
 }
