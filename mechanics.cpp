@@ -3,13 +3,6 @@
 #include <iostream>
 #include <string>
 #define reset "\033[1;0m"
-#define red "\033[1;31m"
-#define green "\033[1;32m"
-#define yellow "\033[1;33m"
-#define blue "\033[1;34m"
-#define magenta "\033[1;35m"
-#define cyan "\033[1;36m"
-#define white "\033[1;37m"
 #define blueBackground "\033[44m"
 using namespace std;
 
@@ -62,7 +55,6 @@ void Board::placeMines()
     mineBoard[yLocation][xLocation]='H';
     
     numberOfMines = (row*column) * 0.2;
-    numberOfFlags = numberOfMines;
     
     int rnd_r, rnd_c;   // random input for row and column
     
@@ -222,10 +214,8 @@ char Board::getPlayerInput(bool IsFirstTimePlaying) {
 
 void Board::uncover(int x, int y) {
     if (mineBoard[y][x] == 'B') {
-        currentScore -= 100;
+        currentScore -= 200;
         playerBoard[y][x] = '@';
-        cout << "You uncovered a mine!\n";
-        // not final. need to figure out a way to format this message below the board.
         return;
     }
     
@@ -255,6 +245,7 @@ void Board::uncover(int x, int y) {
 
     if (surroundingMineCount != 48) {
         playerBoard[y][x] = char(surroundingMineCount);
+        currentScore += 20;
         return;
     }
 
@@ -289,10 +280,16 @@ void Board::flagging() {
     if (playerBoard[yLocation][xLocation] == 'F') {
         playerBoard[yLocation][xLocation] = ' ';
         numberOfFlags += 1;
+        currentScore -= 50;
         return;
     }
 
     playerBoard[yLocation][xLocation] = 'F';
     numberOfFlags -= 1;
-        
+    
+    if (mineBoard[yLocation][xLocation] == 'B') {
+        currentScore += 50;
+    } else {
+        currentScore -= 100;
+    }
 }
