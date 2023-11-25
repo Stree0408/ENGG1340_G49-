@@ -312,7 +312,7 @@ void Board::flagging() {
 }
 
 
-void Board::endGame(int currentScore){
+void Board::endGame(){
     string playerName;
     cout << "Enter your name: ";
     cin >> playerName;
