@@ -6,14 +6,14 @@ using namespace std;
 
 struct Score {
     string playerName;
-    int score;
+    int record;
 };
 
 void saveScoreboard(const vector<Score>& scoreboard) {
     ofstream file("scoreboard.txt");
     if (file.is_open()) {
         for (const Score& score : scoreboard) {
-            file << score.playerName << " " << score.score << endl;
+            file << score.playerName << " " << score.record << endl;
         }
         file.close();
     } else {
@@ -24,7 +24,7 @@ void saveScoreboard(const vector<Score>& scoreboard) {
 void updateScoreboard(const string& playerName, int points, vector<Score>& scoreboard) {
     Score score;
     score.playerName = playerName;
-    score.score = points;
+    score.record = points;
 
     scoreboard.push_back(score);
     saveScoreboard(scoreboard);
@@ -34,7 +34,7 @@ void loadScoreboard(vector<Score>& scoreboard) {
     ifstream file("scoreboard.txt");
     if (file.is_open()) {
         Score score;
-        while (file >> score.playerName >> score.score) {
+        while (file >> score.playerName >> score.record) {
             scoreboard.push_back(score);
         }
         file.close();
@@ -68,8 +68,8 @@ int scoring() {
         if (scoreboard.empty()) {
             cout << "No scores found. Starting a new game." << endl;
         } else {
-            for (const Score& score : scoreboard) {
-                cout << "Player: " << score.playerName << ", Score: " << score.score << endl;
+            for (const Score& record : scoreboard) {
+                cout << "Player: " << record.playerName << ", Score: " << record.record << endl;
             }
         }
     } else {
@@ -81,3 +81,7 @@ int scoring() {
     return 0;
 }
 
+int main() {
+    scoring();
+    return 0;
+}
