@@ -128,7 +128,7 @@ void Board::printBoard() {
     cout << corners[8];
     cout << "\n";
     displayControls();
-    displayFlags(numberOfFlags);
+    displayFlags(currentScore, numberOfFlags);
 }
 
 
