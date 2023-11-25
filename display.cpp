@@ -23,6 +23,7 @@ void mainMenu() {
 
 }
 
+//displays instructions to play the game
 void displayControls() {
     cout << "\n"
             "┌───────────────────────────────────────────────────────────────────────────┐\n"
@@ -38,6 +39,7 @@ void displayControls() {
             "\n";
 }
 
+//displays the current score and number of flags left
 void displayFlags(int currentScore, int numberOfFlags){
     cout << "Score: " << currentScore << "\n";
     cout << "Flags: " << numberOfFlags << "\n\n";
