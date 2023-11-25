@@ -29,7 +29,7 @@ void runGame() {
     } while (input != 'm' && determine==false);
 
     // needs a function to end the game and save the scores and stuff.
-    cout << "game over";
+    cout << "GAME OVER!!!" << endl;
     b.endGame();
     b.delDynamic();
 }
