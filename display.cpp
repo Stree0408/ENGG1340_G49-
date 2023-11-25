@@ -14,7 +14,8 @@ void displayBanner() {
 }
 
 void mainMenu() {
-    cout << "█▀█ █▀█ █▀▀ █▀ █▀   ▄█   ▀█▀ █▀█   █▀ ▀█▀ ▄▀█ █▀█ ▀█▀\n"
+    cout << "\n"
+            "█▀█ █▀█ █▀▀ █▀ █▀   ▄█   ▀█▀ █▀█   █▀ ▀█▀ ▄▀█ █▀█ ▀█▀\n"
             "█▀▀ █▀▄ ██▄ ▄█ ▄█   ░█   ░█░ █▄█   ▄█ ░█░ █▀█ █▀▄ ░█░\n"
             "\n"
             "█▀█ █▀█ █▀▀ █▀ █▀   ▀█   ▀█▀ █▀█   █▀ █▀▀ █▀▀   █░░ █▀▀ ▄▀█ █▀▄ █▀▀ █▀█ █▄▄ █▀█ ▄▀█ █▀█ █▀▄\n"
@@ -23,7 +24,8 @@ void mainMenu() {
 }
 
 void displayControls() {
-    cout << "┌───────────────────────────────────────────────────────────────────────────┐\n"
+    court << "\n"
+            "┌───────────────────────────────────────────────────────────────────────────┐\n"
             "│ press W or A or S or D and press Enter for each move                      │\n"
             "│ if you put in multiple characters, only the first one will be considered  │\n"
             "│ press O and press Enter for uncovering the tile                           │\n"
