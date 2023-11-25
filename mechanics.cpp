@@ -312,8 +312,17 @@ void Board::endGame(int currentScore){
 
 
 void Board::leaderboard(int currentScore) {
+    vector<Score> scoreboard;
+    loadScoreboard(scoreboard);
+
+    if (scoreboard.empty()) {
+        cout << "No previously saved scores." << endl;
+        return;
+    }
+
     // Sort the scoreboard
     sortScores(scoreboard);
+
     // Print the sorted scoreboard
     cout << "Scoreboard:" << endl;
     printScoreboard(scoreboard);
