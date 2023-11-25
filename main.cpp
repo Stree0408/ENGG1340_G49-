@@ -40,11 +40,11 @@ int main() {
     int firstinput;
     cin >> firstinput;
     while (firstinput != 1 && firstinput != 2) {
-    cout << "Please enter the number again: ";
-    cin >> firstinput;
+        cout << "Please enter the number again: ";
+        cin >> firstinput;
     }
     if(firstinput == 1){
-    runGame();} 
+        runGame();} 
     // need function for leaderboard
     else if (firstinput ==2) {
         leaderboard();
