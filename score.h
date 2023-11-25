@@ -1,6 +1,6 @@
 #ifndef score_H
 #define score_H
-
+#include <vector>
 #include <string>
 #include <vector>
 
@@ -12,8 +12,7 @@ struct Score {
 void saveScoreboard(const std::vector<Score>& scoreboard);
 void updateScoreboard(const std::string& playerName, int points);
 void loadScoreboard(std::vector<Score>& scoreboard);
-#include <vector>
-#include "score.h" // Include the score.cpp file that contains the Score struct and related functions
+ // Include the score.cpp file that contains the Score struct and related functions
 
 // Function to print out the scoreboard
 void printScoreboard(const std::vector<Score>& scoreboard);
