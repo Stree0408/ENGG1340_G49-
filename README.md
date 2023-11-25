@@ -65,14 +65,7 @@ https://
 |Name|Type|Purpose|
 |:-:|:-:|:-:|
 |runGame|void|runs the game minesweeper|
-|player1|Player|Represents the first player|
-|player2|Player|Represents the second player|
-|counter|int|Counts the number of turns|
-|turn|int|Indicates whose turn it is (0 for player1, 1 for player2)|
-|TicketResult|int|Stores the result of the ticket roll|
-|input|string|Stores user input|
-|tickets|vector<int>|Stores the remaining tickets|
-|malVector|vector<string>|Stores the list of Mal names to be displayed|
+
 
 ### mechanics.cpp
 > various functions that we used to run the game
