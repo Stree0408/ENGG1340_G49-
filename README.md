@@ -7,7 +7,7 @@ https://
 ## Team Members:
   * Park Chanhyuk (3036086804)
   * Son ()
-  * Kim Minju (3035978531)
+  * Kim ()
   * Jung ()
 
 ### How to Play
