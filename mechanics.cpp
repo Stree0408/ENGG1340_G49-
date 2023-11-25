@@ -132,7 +132,7 @@ void Board::printBoard() {
             cout << corners[7] << "─────";
         }
     cout << corners[8];
-    cout << "\n"
+    cout << "\n";
     displayControls();
 }
 
