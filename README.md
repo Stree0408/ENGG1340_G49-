@@ -117,9 +117,9 @@ https://
 |Data structures for storing game status|This code initializes a Player object with a name and three Mals, represented as a custom data structure, storing their initial positions and game states in a vector called Mals. This Player Class is used in the main function to store status of each player.|
 |Dynamic memory management| This code reads game names from a file into a vector of strings, dynamically resizing the vector as needed to accommodate the names, and then prints the saved game names to the console.|
 |File input/output (e.g., for loading/saving game status)|This code appends a given filename to the "Games.txt" file, using file output operations to save game names persistently, while handling potential file opening errors.|
-|Program codes in multiple files| Our group have divided our code to multiple files in terms of their purposes.|
-|Proper indentation and naming styles| We have done proper indentation and naming styles for functions, so the names represent their function in the code.|
-|In-code documentation| we have explained each code to help readers to understand the code.|
+|Program codes in multiple files| Our group divided our code to multiple files in terms of their purposes.|
+|Proper indentation and naming styles| We have done proper indentation, and named the functions so the names represent their function in the code.|
+|In-code documentation| we have put explanations for codes to help the reader's understanding.|
 
 
 ### How to Compile and Run
