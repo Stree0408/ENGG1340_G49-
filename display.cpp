@@ -29,7 +29,13 @@ void displayControls() {
             "│ press O and press Enter for uncovering the tile                           │\n"
             "│ press P and press Enter for flagging the tile                             │\n"
             "│ press M to end the game                                                   │\n"
+            "│ @ means you uncovered a Mine                                              │\n"
             "│ if you uncover a Mine you will LOSE 100 points                            │\n"
             "│ FLAG all Mines to WIN!!                                                   │\n"
-            "└───────────────────────────────────────────────────────────────────────────┘\n";
+            "└───────────────────────────────────────────────────────────────────────────┘\n"
+            "\n";
+}
+
+void displayFlags(int numberOfFlags) {
+    cout << "Flags: " << numberOfFlags;
 }
