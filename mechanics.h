@@ -1,6 +1,8 @@
 #ifndef MECHANICS_H
 #define MECHANICS_H
 
+
+void leaderboard();
 struct Board {
     int column;
     int row;
@@ -21,7 +23,7 @@ struct Board {
     void uncover(int x, int y);
     void flagging();
     void endGame(int currentScore);
-    void leaderboard(int currentScore);
+   
     bool checkEndGame(); 
 
 
