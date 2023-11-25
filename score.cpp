@@ -42,7 +42,7 @@ void loadScoreboard(vector<Score>& scoreboard) {
         }
         file.close();
     } else {
-        cout << "No scoreboard file found. Starting a new game." << endl;
+        cout << "No scoreboard file found. Your score will be added to the board as a new player." << endl;
     }
 }
 
