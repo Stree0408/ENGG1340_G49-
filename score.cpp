@@ -7,7 +7,6 @@
 using namespace std;
 
 void printScoreboard(const vector<Score>& scoreboard) {
-    cout << "Scoreboard:" << endl;
     for (const Score& score : scoreboard) {
         cout << "Player: " << score.playerName << ", Score: " << score.record << endl;
     }
