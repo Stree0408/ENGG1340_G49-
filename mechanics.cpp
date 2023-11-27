@@ -2,6 +2,8 @@
 #include "mechanics.h"
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 #include "score.h"
 #define reset "\033[1;0m"
 #define blueBackground "\033[44m"
