@@ -41,7 +41,7 @@ https://
 ### **Game Components**
 1.	main.cpp: The `main.cpp` file contains the main game loop and logic.
 
-2.	mechanics.h: The `board.h` file contains the main logic of the game.
+2.	mechanics.h: The `mechanics.h` file contains the main logic of the game.
 
 4.	display.h: The `display.h` file contains the display of the game.
 
@@ -54,6 +54,9 @@ https://
 * `<string>`
 * `<vector>`
 * `<fstream>`
+* `<cstdlib>`
+* `<ctime>`
+* `<algorithm>`
 <br/>
 
 ***
@@ -79,18 +82,18 @@ https://
 |currentScore|int|counts the current score of the player|
 |xLocation|int|expresses the xLocation of the player|
 |yLocation|int|expresses the yLocation of the player|
-|**mineBoard|char|a board filled with randomly scattered mines|
-|**playerBoard|char|a board which reflects the player's input|
+|**mineBoard|char|Dynamically created 2-d array which represents a board filled with randomly scattered mines|
+|**playerBoard|char|Dynamically created 2-d array which presents a board which reflects the player's input|
 |setBoardSize|void|takes player input for row and column|
 |setBoard|void|generates a board with from the player input|
 |placeMines|void|randomly places the mines on the board|
-|delDynamic|void||
+|delDynamic|void|destroys the 2-d array objects which are dynamically created|
 |printBoard|void|prints the board so it is visible to players|
 |getPlayerInput|char|gets the player input and processes the command|
 |uncover|void|uncovers the mine, or generates surrounding numbers|
 |flagging|void|flags the location|
 |endGame|void||
-|checkEndGame|bool||
+|checkEndGame|bool|Checks if all the cells are revealed, ends the game if all the cells are revealed|
 
 
 
@@ -123,9 +126,9 @@ https://
 
 |Requirenment name|Explanation|
 |:-:|:-:|
-|Generation of random game sets or events|The getTicket() function simulates a random distribution of tickets with different rarity levels by generating a random integer and using conditional statements to determine the ticket type, with probabilities skewed towards more common types.|
+|Generation of random game sets or events|The placeMines() function simulates a random distribution of mines at the rows and columns by generating a random integer.|
 |Data structures for storing game status|This code initializes a Player object with a name and three Mals, represented as a custom data structure, storing their initial positions and game states in a vector called Mals. This Player Class is used in the main function to store status of each player.|
-|Dynamic memory management| This code reads game names from a file into a vector of strings, dynamically resizing the vector as needed to accommodate the names, and then prints the saved game names to the console.|
+|Dynamic memory management| To make the customizable board, our group has dynamically allocated memory for the 2D array named **mineBoard|
 |File input/output (e.g., for loading/saving game status)|This code appends a given filename to the "Games.txt" file, using file output operations to save game names persistently, while handling potential file opening errors.|
 |Program codes in multiple files| Our group divided our code to multiple files in terms of their purposes.|
 |Proper indentation and naming styles| We have done proper indentation, and named the functions so the names represent their function in the code.|
@@ -133,6 +136,6 @@ https://
 
 
 ### How to Compile and Run
-> Type "make game" in the same directory
+> Type "make game" 
 > Type "./game" to launch the game
-> Type "make clean", if you want to delete saved games.
+> Type "make clean", if you want to delete saved scores of the players.
