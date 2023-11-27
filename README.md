@@ -1,5 +1,5 @@
 # Customizable Minesweeper - ENGG1340_G49
-  * Welcome to the Customizable Minesweeper! This game is a text-based Minesweeper, try our game by setting your own board!
+  * Welcome to the Customizable Minesweeper! This game is a text-based Minesweeper; try our game by setting your own board!
   *  3 Minute Demo Video:
 https:// 
 
@@ -8,44 +8,34 @@ https://
   * Park Chanhyuk (3036086804)
   * Son Ye Ryung (3036050312)
   * Kim Minju (3035978531)
-  * Jung Se Yeon (3036050518)
+  * Jung SeYeon (3036050518)
 
 ### How to Play
-1.	Compile the program and run the executable.
-2.	Set the board size 
-3.	Click the cell to reveal 
-4.	If
-
-### The introduction and rule of the game
-1. play new game
-2. see the Leaderboard
-
-### Rule of the game
-1. Complie and run the program
-2. choose from 1 and 2
-3. Customize your board size
-4. Play the game
+1.	Compile and run the program.
+2.	Enter '1' to start the game, and enter '2' to view the leaderboard of the highest scores recorded.
+3.	If you input '1', you need to input the number of rows and columns to set the board size.
+4.	Enjoy!
 
 <br/>
 
-### The introduction and rules of the game
-1. Choose a cell and press 'o' to start the game
-2. The number on each cell represents the number of mines around the cell
-3. uncover the cell if you think it does not have a mine
-4. flag the cell if you think it has a mine
-5. If you uncover a mine, you will lose 200 points
-6. To end the game, uncover or flag all the cells
+### The rules of the game
+1. Choose a cell by pressing 'WASD' keys and 'Enter' to move the cursor, and press 'o' to uncover your first cell and start the game.
+2. The number on each cell represents the number of mines around the cell.
+3. Uncover a cell if you think it does not have a mine by pressing 'o' and then 'Enter'.
+4. Flag a cell if you think it has a mine by pressing 'p' and then 'Enter'.
+5. If you uncover a mine, you will lose 200 points.
+6. To end the game, uncover or flag all the cells, or press 'm' and 'Enter' to quit mid-game.
 
 <br/>
 
 ### **Game Components**
 1.	main.cpp: The `main.cpp` file contains the main game loop and logic.
 
-2.	mechanics.h: The `mechanics.h` file contains the main logic of the game.
+2.	mechanics.cpp: The `mechanics.cpp` file contains the main logic of the game.
 
-4.	display.h: The `display.h` file contains the display of the game.
+4.	display.cpp: The `display.cpp` file contains the display of the game.
 
-5.	score.h: The `score.h` file 
+5.	score.cpp: The `score.cpp` file 
 <br/>
 
 ### **Dependencies**
@@ -127,7 +117,7 @@ https://
 |Requirenment name|Explanation|
 |:-:|:-:|
 |Generation of random game sets or events|The placeMines() function simulates a random distribution of mines at the rows and columns by generating a random integer.|
-|Data structures for storing game status|This code initializes a Player object with a name and three Mals, represented as a custom data structure, storing their initial positions and game states in a vector called Mals. This Player Class is used in the main function to store status of each player.|
+|Data structures for storing game status|By using the custom data structure 'Board', the program stores many variables to store the game status such as the state of the player board, the current score, the current location of the player's cursor, etc.|
 |Dynamic memory management| To make the customizable board, our group has dynamically allocated memory for the 2D arrays named **mineBoard and **playerBoard|
 |File input/output (e.g., for loading/saving game status)|This code appends a given filename to the "Games.txt" file, using file output operations to save game names persistently, while handling potential file opening errors.|
 |Program codes in multiple files| Our group divided our code to multiple files in terms of their purposes.|
