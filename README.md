@@ -128,7 +128,7 @@ https://
 |:-:|:-:|
 |Generation of random game sets or events|The placeMines() function simulates a random distribution of mines at the rows and columns by generating a random integer.|
 |Data structures for storing game status|This code initializes a Player object with a name and three Mals, represented as a custom data structure, storing their initial positions and game states in a vector called Mals. This Player Class is used in the main function to store status of each player.|
-|Dynamic memory management| To make the customizable board, our group has dynamically allocated memory for the 2D array named **mineBoard|
+|Dynamic memory management| To make the customizable board, our group has dynamically allocated memory for the 2D arrays named **mineBoard and **playerBoard|
 |File input/output (e.g., for loading/saving game status)|This code appends a given filename to the "Games.txt" file, using file output operations to save game names persistently, while handling potential file opening errors.|
 |Program codes in multiple files| Our group divided our code to multiple files in terms of their purposes.|
 |Proper indentation and naming styles| We have done proper indentation, and named the functions so the names represent their function in the code.|
@@ -136,6 +136,8 @@ https://
 
 
 ### How to Compile and Run
-> Type "make game" 
+> Type "make game"
+> 
 > Type "./game" to launch the game
+> 
 > Type "make clean", if you want to delete saved scores of the players.
