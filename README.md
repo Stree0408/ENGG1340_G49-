@@ -1,5 +1,6 @@
 # Customizable Minesweeper - ENGG1340_G49
-  * Welcome to the Customizable Minesweeper! This game is a text-based Minesweeper; try our game by setting your own board!
+  * Welcome to the Customizable Minesweeper! This game is a text-based Minesweeper on terminal.
+  * You'll get the best experience when you play it in full screen!
   *  3 Minute Demo Video:
 https:// 
 
