@@ -7,7 +7,7 @@ https://
   
 ## Team Members:
   * Park Chanhyuk (3036086804)
-  * Son Ye Ryung (3036050312)
+  * Sohn Ye Ryung (3036050312)
   * Kim Minju (3035978531)
   * Jung SeYeon (3036050518)
 
@@ -101,16 +101,17 @@ https://
 
 
 ### score.cpp
-> This code defines a `Map` class that manages a board game map, handling player locations, mapping between different coordinate systems, and updating the game board's visual representation.
+> various functions that set the scoreboard and print it
 
 |Name|Type|Purpose|
 |:-:|:-:|:-:|
-|TicketResult|int|Stores the result of the ticket roll|
-|input|string|Stores user input|
-|malSelect|int|Stores the selected Mal index|
-|tickets|vector<int>|Stores the remaining tickets|
-|malVector|vector<string>|Stores the list of Mal names to be displayed|
-
+|printScoreboard|void|Prints scoreboard with recorded player's name and poitns|
+|compareScores|void|Compares two Score objects based on their record member variable|
+|sortScores|void|Sorts the scores from highest to lowest|
+|saveScoreboard|void|Saves the contents of the scoreboard vector to a file named "scoreboard.txt"|
+|updateScoreboard|void|Updates the scoreboard by adding a new Score entry with the given playerName and points|
+|loadScoreboard|void|Loads the contents of a scoreboard file named "scoreboard.txt" into a vector scoreboard|
+|scoring|int|Allows the user to enter a player name and points and update the scoreboard|
 
 ### The Coding Requirements
 >Coding requirement demonstration
