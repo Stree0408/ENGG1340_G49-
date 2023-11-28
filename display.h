@@ -5,5 +5,6 @@
  void mainMenu();
  void displayControls();
  void displayFlags(int currentScore, int numberOfFlags);
+ void displayEnding(int currentScore);
 
 #endif
