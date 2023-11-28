@@ -121,7 +121,7 @@ https://
 |Generation of random game sets or events|The placeMines() function simulates a random distribution of mines at the rows and columns by generating a random integer.|
 |Data structures for storing game status|By using the custom data structure 'Board', the program stores many variables to store the game status such as the state of the player board, the current score, the current location of the player's cursor, etc.|
 |Dynamic memory management| To make the customizable board, our group has dynamically allocated memory for the 2D arrays named **mineBoard and **playerBoard|
-|File input/output (e.g., for loading/saving game status)|This code appends a given filename to the "Games.txt" file, using file output operations to save game names persistently, while handling potential file opening errors.|
+|File input/output (e.g., for loading/saving game status)|To save the name and points of players, the data was appended to the textile "scoreboard.txt" and loaded/updated the file each game.|
 |Program codes in multiple files| Our group divided our code to multiple files in terms of their purposes.|
 |Proper indentation and naming styles| We have done proper indentation, and named the functions so the names represent their function in the code.|
 |In-code documentation| we have put explanations for codes to help the reader's understanding.|
