@@ -3,6 +3,7 @@
 #include <iostream>
 using namespace std;
 
+//displays the banner "minesweeper"
 void displayBanner() {
     cout << "███╗░░░███╗██╗███╗░░██╗███████╗░██████╗░██╗░░░░░░░██╗███████╗███████╗██████╗░███████╗██████╗░\n"
             "████╗░████║██║████╗░██║██╔════╝██╔════╝░██║░░██╗░░██║██╔════╝██╔════╝██╔══██╗██╔════╝██╔══██╗\n"
@@ -13,8 +14,10 @@ void displayBanner() {
     
 }
 
+
+//displays the main menu of the game
 void mainMenu() {
-    cout << "\n"
+    cout << "\n\n\n"
             "█▀█ █▀█ █▀▀ █▀ █▀   ▄█   ▀█▀ █▀█   █▀ ▀█▀ ▄▀█ █▀█ ▀█▀\n"
             "█▀▀ █▀▄ ██▄ ▄█ ▄█   ░█   ░█░ █▄█   ▄█ ░█░ █▀█ █▀▄ ░█░\n"
             "\n"
@@ -22,6 +25,7 @@ void mainMenu() {
             "█▀▀ █▀▄ ██▄ ▄█ ▄█   █▄   ░█░ █▄█   ▄█ ██▄ ██▄   █▄▄ ██▄ █▀█ █▄▀ ██▄ █▀▄ █▄█ █▄█ █▀█ █▀▄ █▄▀\n";
 
 }
+
 
 //displays instructions to play the game
 void displayControls() {
@@ -39,8 +43,26 @@ void displayControls() {
             "\n";
 }
 
+
 //displays the current score and number of flags left
 void displayFlags(int currentScore, int numberOfFlags){
     cout << "Score: " << currentScore << "\n";
     cout << "Flags: " << numberOfFlags << "\n\n";
+}
+
+
+//displays the ending message
+void displayEnding(int currentScore) {
+    cout << "█▀▀ █▀█ █▄░█ █▀▀ █▀█ ▄▀█ ▀█▀ █░█ █░░ ▄▀█ ▀█▀ █ █▀█ █▄░█ █▀ █ █\n"
+            "█▄▄ █▄█ █░▀█ █▄█ █▀▄ █▀█ ░█░ █▄█ █▄▄ █▀█ ░█░ █ █▄█ █░▀█ ▄█ ▄ ▄\n"
+            "\n"
+            "█▄█ █▀█ █░█   █▀▀ █ █▄░█ █ █▀ █░█ █▀▀ █▀▄   ▄▀█   █▀▀ ▄▀█ █▀▄▀█ █▀▀\n"
+            "░█░ █▄█ █▄█   █▀░ █ █░▀█ █ ▄█ █▀█ ██▄ █▄▀   █▀█   █▄█ █▀█ █░▀░█ ██▄\n"
+            "\n"
+            "█▀█ █▀▀   █▀▄▀█ █ █▄░█ █▀▀ █▀ █░█░█ █▀▀ █▀▀ █▀█ █▀▀ █▀█ █\n"
+            "█▄█ █▀░   █░▀░█ █ █░▀█ ██▄ ▄█ ▀▄▀▄▀ ██▄ ██▄ █▀▀ ██▄ █▀▄ ▄\n\n";
+    cout << "Your final score is " << currentScore << "\n\n";
+    cout << "When you enter your name, the score will be\n"
+            "saved to the leaderboard and the program will end.\n"
+            "We hope you enjoyed the game!\n\n";
 }
