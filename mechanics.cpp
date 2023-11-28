@@ -9,27 +9,15 @@
 #define blueBackground "\033[44m"
 using namespace std;
 
-bool Board::checkEndGame()
-{
-    for (int i=0; i<row; i++)
-    {
-        for (int j=0; j<column; j++)
-        {
-            if (playerBoard[i][j] == ' ')
-            {
-                return false;
-            }
-        }
-    }
-    return true;
-}
 
-
+//takes player input for row and column
 void Board::setBoardSize() {
-    cout << "CUSTOMIZE YOUR OWN BOARD, OWN GAME!!" << endl;
-    cout << "ENTER NUMBER BETWEEN 8-16 FOR row : ";
+    system("clear");
+    displayBanner();
+    cout << "Customize your Minesweeper board for a personalized experience! \n";
+    cout << "Enter a number between 8-16 for the row : ";
     cin >> row;
-    cout << "ENTER NUMBER BETWEEN 8-30 FOR column : ";
+    cout << "Enter a number between 8-30 for the column : ";
     cin >> column;
     
     while ( row<8 || row>16)
@@ -40,12 +28,13 @@ void Board::setBoardSize() {
     
     while ( column<8 || column >30 )
     {
-        cout << "Please enter the col again : ";
+        cout << "Please enter the column again : ";
         cin >> column;
     }
 }
 
 
+//generates a board with from the player input dynamically
 void Board::setBoard() {
     mineBoard = new char*[row];
     for(int i=0; i<row; i++) {
@@ -68,11 +57,12 @@ void Board::setBoard() {
 }
 
 
+//randomly places the mines on the board, except for the 3x3 grid surrounding the player's first reveal.
 void Board::placeMines()
 {
-    mineBoard[yLocation][xLocation]='H';
+    mineBoard[yLocation][xLocation]='H';    //player's first reveal
     
-    numberOfMines = (row*column) * 0.2;
+    numberOfMines = (row*column) * 0.2;     //20% of the board are mines
     numberOfFlags = numberOfMines;
     
     int rnd_r, rnd_c;   // random input for row and column
@@ -98,6 +88,7 @@ void Board::placeMines()
 }
 
 
+// destroys the dynamically created 2-d array objects
 void Board::delDynamic()
 {
     for(int i=0; i<row; i++)
@@ -108,7 +99,7 @@ void Board::delDynamic()
 }
      
 
-// needs to be edited to highlight or point to where the cursor is currently located
+//prints the board for the player
 void Board::printBoard() {
     system("clear");
     displayBanner();
@@ -147,9 +138,12 @@ void Board::printBoard() {
     cout << "\n";
     displayControls();
     displayFlags(currentScore, numberOfFlags);
+
+    cout << "Your input: ";
 }
 
 
+//gets the player input and processes the command
 char Board::getPlayerInput(bool IsFirstTimePlaying) {
     char playerInput;
     
@@ -231,6 +225,7 @@ char Board::getPlayerInput(bool IsFirstTimePlaying) {
 }
 
 
+//uncovers the mine underneath, or generates the number of surrounding mines
 void Board::uncover(int x, int y) {
     if (mineBoard[y][x] == 'B') {
         currentScore -= 200;
@@ -294,7 +289,7 @@ void Board::uncover(int x, int y) {
 }
 
 
-// 'F' for flags? not final. Also, the scores need to be adjusted.
+//flags where the player's cursor is located
 void Board::flagging() {
     if (playerBoard[yLocation][xLocation] == 'F') {
         playerBoard[yLocation][xLocation] = ' ';
@@ -314,6 +309,7 @@ void Board::flagging() {
 }
 
 
+//at the end of the game, get the player's name to save the final score to the leaderboard
 void Board::endGame(){
     string playerName;
     cout << "Enter your name: ";
@@ -328,6 +324,7 @@ void Board::endGame(){
 }
 
 
+//displays the leaderboard
 void leaderboard() {
     vector<Score> scoreboard;
     loadScoreboard(scoreboard);
@@ -343,4 +340,21 @@ void leaderboard() {
     // Print the sorted scoreboard
    
     printScoreboard(scoreboard);
+}
+
+
+//checks if all the cells are revealed, and ends the game if so
+bool Board::checkEndGame()
+{
+    for (int i=0; i<row; i++)
+    {
+        for (int j=0; j<column; j++)
+        {
+            if (playerBoard[i][j] == ' ')
+            {
+                return false;
+            }
+        }
+    }
+    return true;
 }
