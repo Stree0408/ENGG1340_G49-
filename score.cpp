@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//Prints scoreboard with recorded player's name and points
 void printScoreboard(const vector<Score>& scoreboard) {
     cout << "Scoreboard:" << endl;
     for (const Score& score : scoreboard) {
@@ -13,10 +14,12 @@ void printScoreboard(const vector<Score>& scoreboard) {
     }
 }
 
+
 // Comparator function to sort scores in descending order
 bool compareScores(const Score& score1, const Score& score2) {
     return score1.record > score2.record;
 }
+
 
 // Function to sort the scores from highest to lowest
 void sortScores(vector<Score>& scoreboard) {
@@ -24,8 +27,7 @@ void sortScores(vector<Score>& scoreboard) {
 }
 
 
-void loadScoreboard(vector<Score>& scoreboard);
-
+//Saves the contents of the scoreboard vector to a file named "scoreboard.txt"
 void saveScoreboard(const vector<Score>& scoreboard) {
     ofstream file("scoreboard.txt");
     if (file.is_open()) {
@@ -38,6 +40,8 @@ void saveScoreboard(const vector<Score>& scoreboard) {
     }
 }
 
+
+//Updates the scoreboard by adding a new Score entry with the given playerName and points
 void updateScoreboard(const string& playerName, int points) {
     vector<Score> scoreboard;
     loadScoreboard(scoreboard);
@@ -50,6 +54,8 @@ void updateScoreboard(const string& playerName, int points) {
     saveScoreboard(scoreboard);
 }
 
+
+//Loads the contents of a scoreboard file named "scoreboard.txt" into a vector scoreboard
 void loadScoreboard(vector<Score>& scoreboard) {
     ifstream file("scoreboard.txt");
     if (file.is_open()) {
@@ -59,21 +65,6 @@ void loadScoreboard(vector<Score>& scoreboard) {
         }
         file.close();
     } else {
-        cout << "No previously saved scoreboard file found. Your score will be recorded on a new scoreboard." << endl;
+        cout << "No previously saved scoreboard file found.\nYour score will be recorded on a new scoreboard.\n";
     }
-}
-
-int scoring() {
-    string playerName;
-    int points;
-
-    cout << "Enter player name: ";
-    cin >> playerName;
-
-    cout << "Enter points: ";
-    cin >> points;
-
-    updateScoreboard(playerName, points);
-
-    return 0;
 }
