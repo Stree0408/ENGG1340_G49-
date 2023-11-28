@@ -2,7 +2,7 @@
   * Welcome to the Customizable Minesweeper! This game is a text-based Minesweeper on terminal.
   * You'll get the best experience when you play it in full screen!
   *  3 Minute Demo Video:
-https:// 
+https://drive.google.com/file/d/1R31jnlWmTR8BvFU3qrMjXsqNovDcqUIV/view?usp=sharing 
 
   
 ## Team Members:
