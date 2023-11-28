@@ -4,15 +4,15 @@
 
 void leaderboard();
 struct Board {
-    int column;
-    int row;
-    int numberOfFlags;
-    int numberOfMines;
-    int xLocation;
-    int yLocation;
-    char **mineBoard;
-    char **playerBoard;
-    int currentScore;
+    int column; //the number of columns of the customized board
+    int row; //the number of rows of the customized board
+    int numberOfFlags; //the number of flags left to use
+    int numberOfMines; //the number of mines on the board
+    int xLocation; //expresses the xLocation of the player on the board
+    int yLocation; //expresses the yLocation of the player on the board
+    char **mineBoard; //Dynamically created 2-d array which represents a board filled with randomly scattered mines
+    char **playerBoard; //Dynamically created 2-d array which presents a board which reflects the player's input
+    int currentScore; //counts the current score of the player
 
     void setBoardSize();
     void setBoard();
@@ -24,9 +24,7 @@ struct Board {
     void flagging();
     void endGame();
     void leaderboard();
-   
-    bool checkEndGame(); 
-
+    bool checkEndGame();
 
 };
 
