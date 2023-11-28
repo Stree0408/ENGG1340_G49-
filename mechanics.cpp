@@ -6,7 +6,7 @@
 #include <ctime>
 #include "score.h"
 #define reset "\033[1;0m"
-#define blueBackground "\033[44m"
+#define blueBackground "\033[104m"
 using namespace std;
 
 
