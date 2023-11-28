@@ -11,13 +11,21 @@ https://
   * Kim Minju (3035978531)
   * Jung SeYeon (3036050518)
 
+<br/>
+
+### How to Compile and Run
+1. Change directory to the downloaded game folder on terminal.
+2. Type "make game"
+3. Type "./game" to launch the game
+4. Type "make clean" if you want to delete saved scores of the players.
+
+
 ### How to Play
 1.	Compile and run the program.
 2.	Enter '1' to start the game, and enter '2' to view the leaderboard of the highest scores recorded.
 3.	If you input '1', you need to input the number of rows and columns to set the board size.
 4.	Enjoy!
 
-<br/>
 
 ### The rules of the game
 1. Choose a cell by pressing 'WASD' keys and 'Enter' to move the cursor, and press 'o' to uncover your first cell and start the game.
@@ -37,6 +45,7 @@ https://
 4.	display.cpp: The `display.cpp` file contains the display of the game.
 
 5.	score.cpp: The `score.cpp` file 
+
 <br/>
 
 ### **Dependencies**
@@ -48,6 +57,7 @@ https://
 * `<cstdlib>`
 * `<ctime>`
 * `<algorithm>`
+
 <br/>
 
 ***
@@ -58,39 +68,38 @@ https://
 
 |Name|Type|Purpose|
 |:-:|:-:|:-:|
-|runGame|void|runs the game minesweeper|
+|runGame|void|runs the main game|
 
 
 ### mechanics.cpp
-> various functions that we used to run the game
+> various functions we created to run the game
 
 |Name|Type|Purpose|
 |:-:|:-:|:-:|
-|column|int|asks the user for the number of columns|
-|row|int|asks the user for the number of columns|
-|numberOfFlags|int|counts the number of flags left|
-|numberOfMines|int|counts the number of Mines on the board|
+|column|int|the number of columns of the customized board|
+|row|int|the number of rows of the customized board|
+|numberOfFlags|int|the number of flags left to use|
+|numberOfMines|int|the number of mines on the board|
 |currentScore|int|counts the current score of the player|
-|xLocation|int|expresses the xLocation of the player|
-|yLocation|int|expresses the yLocation of the player|
+|xLocation|int|expresses the xLocation of the player on the board|
+|yLocation|int|expresses the yLocation of the player on the board|
 |**mineBoard|char|Dynamically created 2-d array which represents a board filled with randomly scattered mines|
 |**playerBoard|char|Dynamically created 2-d array which presents a board which reflects the player's input|
 |setBoardSize|void|takes player input for row and column|
 |setBoard|void|generates a board with from the player input|
-|placeMines|void|randomly places the mines on the board|
-|delDynamic|void|destroys the 2-d array objects which are dynamically created|
-|printBoard|void|prints the board so it is visible to players|
+|placeMines|void|randomly places the mines on the board, except for the 3x3 grid surrounding the player's first reveal.|
+|delDynamic|void|destroys the dynamically created 2-d array objects|
+|printBoard|void|prints the board for the player|
 |getPlayerInput|char|gets the player input and processes the command|
-|uncover|void|uncovers the mine, or generates surrounding numbers|
-|flagging|void|flags the location|
-|endGame|void||
-|checkEndGame|bool|Checks if all the cells are revealed, ends the game if all the cells are revealed|
-
-
+|uncover|void|uncovers the mine underneath, or generates the number of surrounding mines|
+|flagging|void|flags where the player's cursor is located|
+|endGame|void|at the end of the game, get the player's name to save the final score to the leaderboard|
+|leaderboard|void|displays the leaderboard|
+|checkEndGame|bool|checks if all the cells are revealed, ends the game if all the cells are revealed|
 
 
 ### display.cpp
-> various functions that we used to display the game
+> various functions that we created to display the game
 
 |Name|Type|Purpose|
 |:-:|:-:|:-:|
@@ -98,6 +107,7 @@ https://
 |mainMenu|void|displays the main menu of the game|
 |displayControls|void|displays the directions to play the game|
 |displayFlags|void|displays the current score and number of flags left|
+|displayEnding|void|displays the ending message|
 
 
 ### score.cpp
@@ -105,13 +115,16 @@ https://
 
 |Name|Type|Purpose|
 |:-:|:-:|:-:|
-|printScoreboard|void|Prints scoreboard with recorded player's name and poitns|
+|printScoreboard|void|Prints scoreboard with recorded player's name and points|
 |compareScores|void|Compares two Score objects based on their record member variable|
 |sortScores|void|Sorts the scores from highest to lowest|
 |saveScoreboard|void|Saves the contents of the scoreboard vector to a file named "scoreboard.txt"|
 |updateScoreboard|void|Updates the scoreboard by adding a new Score entry with the given playerName and points|
 |loadScoreboard|void|Loads the contents of a scoreboard file named "scoreboard.txt" into a vector scoreboard|
-|scoring|int|Allows the user to enter a player name and points and update the scoreboard|
+
+
+<br/>
+
 
 ### The Coding Requirements
 >Coding requirement demonstration
@@ -125,11 +138,3 @@ https://
 |Program codes in multiple files| Our group divided our code to multiple files in terms of their purposes.|
 |Proper indentation and naming styles| We have done proper indentation, and named the functions so the names represent their function in the code.|
 |In-code documentation| we have put explanations for codes to help the reader's understanding.|
-
-
-### How to Compile and Run
-> Type "make game"
-> 
-> Type "./game" to launch the game
-> 
-> Type "make clean", if you want to delete saved scores of the players.
