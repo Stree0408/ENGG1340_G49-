@@ -9,15 +9,13 @@ struct Score {
     int record;
 };
 
+
+void printScoreboard(const std::vector<Score>& scoreboard);
+bool compareScores(const Score& score1, const Score& score2);
+void sortScores(std::vector<Score>& scoreboard);
 void saveScoreboard(const std::vector<Score>& scoreboard);
 void updateScoreboard(const std::string& playerName, int points);
 void loadScoreboard(std::vector<Score>& scoreboard);
- // Include the score.cpp file that contains the Score struct and related functions
 
-// Function to print out the scoreboard
-void printScoreboard(const std::vector<Score>& scoreboard);
-
-// Function to sort the scores from highest to lowest
-void sortScores(std::vector<Score>& scoreboard);
 #endif
 
