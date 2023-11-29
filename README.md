@@ -32,8 +32,9 @@ https://drive.google.com/file/d/1R31jnlWmTR8BvFU3qrMjXsqNovDcqUIV/view?usp=shari
 2. The number on each cell represents the number of mines around the cell.
 3. Uncover a cell if you think it does not have a mine by pressing 'o' and then 'Enter'.
 4. Flag a cell if you think it has a mine by pressing 'p' and then 'Enter'.
-5. If you uncover a mine, you will lose 200 points.
-6. To end the game, uncover or flag all the cells, or press 'm' and 'Enter' to quit mid-game.
+5. If you uncover a mine, you will lose 200 points; if you uncover a cell without a mine, you will gain 20 points.
+6. If you flag a cell with a mine, you will gain 50 points; if you flag a cell without a mine, you will lose 100 points. If you cancel a flag, you will lose 50 points.
+7. To end the game, uncover or flag all the cells, or press 'm' and 'Enter' to quit mid-game.
 
 <br/>
 
