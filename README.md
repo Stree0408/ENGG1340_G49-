@@ -44,7 +44,7 @@ https://drive.google.com/file/d/1R31jnlWmTR8BvFU3qrMjXsqNovDcqUIV/view?usp=shari
 
 4.	display.cpp: The `display.cpp` file contains the display of the game.
 
-5.	score.cpp: The `score.cpp` file 
+5.	score.cpp: The `score.cpp` file contains the scoreboard of the game. 
 
 <br/>
 
